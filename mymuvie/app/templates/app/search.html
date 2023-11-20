@@ -1,0 +1,13 @@
+{% extends "./index.html" %} {% block search_result %}
+<section class="p-3">
+  {% if search_result %}
+  <ul>
+    {% for movie in search_result %}
+    <li>{{ movie }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No movies.</p>
+  {% endif %}
+</section>
+{% endblock %}
