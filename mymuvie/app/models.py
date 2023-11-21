@@ -1,5 +1,5 @@
-import datetime
 from django.db import models
+from django.utils import timezone
 
 
 class Movie(models.Model):
@@ -26,8 +26,8 @@ class Movie(models.Model):
     box_office = models.TextField(null=True)
     production = models.TextField(null=True)
     website = models.TextField(null=True)
-    added_on = models.DateTimeField("date added", auto_now_add=True)
+    added_on = models.DateTimeField("date added", default=timezone.now())
     watched_on = models.DateTimeField("date watched", null=True)
     
     def __str__(self):
-        return self.title
+        return str(self.title) + " - " + str(self.year)

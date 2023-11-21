@@ -78,6 +78,25 @@
     </nav>
     <main>
       <section class="p-3">
+        <form method="post" action="/app/search/">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="m_title"
+            id="m_title"
+            placeholder="Eg. When Harry Met Sally"
+          />
+          <input
+            type="text"
+            name="m_year"
+            id="m_year"
+            placeholder="Eg. 1989 [Optional]"
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+      {% block content %} {% endblock %}
+      <section class="p-3">
         {% if movie_list %}
         <ul>
           {% for movie in movie_list %}
@@ -85,17 +104,9 @@
           {% endfor %}
         </ul>
         {% else %}
-        <p>No corpus was submitted.</p>
+        <p>No muvies.</p>
         {% endif %}
       </section>
-      <section class="p-3">
-        <form method="post" action="/app/search/">
-          {% csrf_token %}
-          <input type="text" name="m_title" id="m_title" />
-          <input type="submit" value="Submit" />
-        </form>
-      </section>
-      {% block search_result %} {% endblock %}
     </main>
     <footer></footer>
     <script
