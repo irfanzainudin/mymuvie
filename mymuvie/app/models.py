@@ -28,6 +28,7 @@ class Movie(models.Model):
     website = models.TextField(null=True)
     added_on = models.DateTimeField("date added", default=timezone.now())
     watched_on = models.DateTimeField("date watched", null=True)
+    watched = models.BooleanField(default=False)
     
     def __str__(self):
         return str(self.title) + " - " + str(self.year)
