@@ -1,5 +1,6 @@
-{% extends "./index.html" %} {% block content %}
-<section class="p-3">
+{% extends "app/home.html" %} {% block search_results %}
+<div class="col-md-10">
+  <h3><i class="bi bi-database-add text-success"></i> Results</h3>
   {% if search_result %}
   <form method="post" action="/app/save/">
     {% csrf_token %} {% for item in search_result %}
@@ -17,5 +18,5 @@
   {% else %}
   <p>No movies.</p>
   {% endif %}
-</section>
+</div>
 {% endblock %}

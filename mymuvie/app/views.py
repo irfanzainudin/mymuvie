@@ -11,7 +11,7 @@ def index(request):
     context = {
         "movie_list": movie_list
 	}
-    return render(request, "app/index.html", context)
+    return render(request, "app/home.html", context)
 
 # Movie
 # {'Title': 'Hidden', 'Year': '2015', 'Rated': 'R', 'Released': '15 Sep 2015', 'Runtime': '84 min', 'Genre': 'Horror, Sci-Fi, Thriller', 'Director': 'Matt Duffer, Ross Duffer', 'Writer': 'Matt Duffer, Ross Duffer', 'Actors': 'Alexander Skarsgård, Andrea Riseborough, Emily Alyn Lind', 'Plot': 'A family takes refuge in a bomb shelter to avoid a dangerous outbreak.', 'Language': 'English', 'Country': 'United States', 'Awards': 'N/A', 'Poster': 'https://m.media-amazon.com/images/M/MV5BM2Q2ZGQyOTAtMWYzYi00YzdiLWJlOGUtMmMyZWExMzc4Nzk3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg', 'Ratings': [{'Source': 'Internet Movie Database', 'Value': '6.4/10'}, {'Source': 'Rotten Tomatoes', 'Value': '80%'}], 'Metascore': 'N/A', 'imdbRating': '6.4', 'imdbVotes': '24,662', 'imdbID': 'tt2131532', 'Type': 'movie', 'DVD': '06 Oct 2015', 'BoxOffice': 'N/A', 'Production': 'N/A', 'Website': 'N/A', 'Response': 'True'}
